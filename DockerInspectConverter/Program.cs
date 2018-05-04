@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace DockerInspectConverter
 {
@@ -37,6 +38,27 @@ namespace DockerInspectConverter
 
             Console.WriteLine(Location);
             Console.ReadLine();
+        }
+
+        public string EnvironmentVariables(DockerInspect specs)
+        {
+            StringBuilder b = new StringBuilder();
+           
+            foreach(string s in specs.Spec.TaskTemplate.ContainerSpec.Env)
+            {
+                b.Append($"-e {s}");
+            }
+
+            return b.ToString();
+        }
+
+        public string ServiceCreation(DockerInspect specs)
+        {
+            StringBuilder b = new StringBuilder();
+
+            string name = specs.Spec.Name;
+
+            return name;
         }
     }
 }

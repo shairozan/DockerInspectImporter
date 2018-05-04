@@ -9,6 +9,6 @@ namespace DockerInspectConverter.Data.Spec
         public ContainerSpec ContainerSpec { get; set; }
         public RestartPolicy RestartPolicy { get; set; }
         public List<Network> Networks { get; set; }
-        
+        public LogDriver LogDriver { get; set; }
     }
 }

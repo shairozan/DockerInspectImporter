@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DockerInspectConverter.Data.Spec
 {
-    class EndpointSpec
+    class LogDriver
     {
-        public string Mode { get; set; }
-        public List<Port> Ports { get; set; }
+        public string Name { get; set; }
+        public LogDriverOptions Options { get; set; }
     }
 }
